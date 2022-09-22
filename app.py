@@ -81,7 +81,7 @@ y = df['y']
 y_train, y_test= np.split(y, [int(.90 *len(y))])
 X_train, X_test= np.split(X, [int(.90 *len(X))])
 
-####
+####DASH LAYOUT######
 app.layout = html.Div([
     #html.Img(src='Your-compay-Logo'),
     html.H1('PHARMA SALES FORECAST',style={'textAlign': 'center',
