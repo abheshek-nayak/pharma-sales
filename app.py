@@ -53,7 +53,7 @@ mycursor=mydb.cursor()
 df=pd.read_sql("select datum,M01AB,M01AE,N02BA,N02BE,N05B,N05C,R03,R06 from salesdaily",mydb,index_col='datum',parse_dates=True )
 
 """### REMOVE OUTLIERS"""
-
+#METHOD 1 -IQR
 # =============================================================================
 # cols = ['M01AB']
 # 
@@ -62,7 +62,7 @@ df=pd.read_sql("select datum,M01AB,M01AE,N02BA,N02BE,N05B,N05C,R03,R06 from sale
 # IQR = Q3 - Q1
 # df = df[~((df[cols] < (Q1 - 1.5 * IQR)) |(df[cols] > (Q3 + 1.5 * IQR))).any(axis=1)]
 # =============================================================================
-
+# METHOD 2 : ZSCORE
 from scipy.stats import zscore
 zscore_ = df.loc[:,['M01AB']].apply(zscore).abs() < 3
 df = df[zscore_.values]
