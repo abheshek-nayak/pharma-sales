@@ -1,4 +1,4 @@
-# pharma-sales
+# pharma-sales Prediction
 Sales Prediction of pharmaceutical drugs using AutoMl <br>
 Tools Used<br>
 a. AutoML algorith - EvalML<br>
