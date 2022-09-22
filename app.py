@@ -2,6 +2,7 @@
 Created on Sun Jun 10 21:48:32 2022
 
 @author: ABHISHEK NAYAK
+@copyright 2022 Abhishek Nayak
 
 """
 # IMPORT ALL LIBRARIES
@@ -29,26 +30,20 @@ app.title = 'XYZ Pharmaceuticals'
 server = app.server
 
 #SQL CLOUD DATABASE(Enter your own details)
-#mydb = pymysql.connect(host="217.21.95.103", port=3306, user="u527191484_anayak", passwd="ws=0huU5=", database="u527191484_PharmaSales")
+#mydb = pymysql.connect(host="host ip", port=port_number, user="username", passwd="passowrd", database="database")
 
 #SQL LOCALHOST
 #=============================================================================
 def DatabaseConnection(user,passwd,database):
     try:
-	   mydb = mysql.connector.connect(host = 'localhost', user = 'root',passwd = 'We1c0me@2022',db = 'pharma')
+	   mydb = mysql.connector.connect(host = 'localhost', user = 'your username',passwd = 'your passowrd',db = 'your database')
     except:
 	   print("""The login credentials you entered are not valid for
  		   the database you indicated.  Please check your login details and try
  		   again.""")
     return mydb
- 				  
- 					  
- 							  
- 							  
 
-    
-
-mydb=DatabaseConnection('--username','--password','salesdaily')
+mydb=DatabaseConnection('--username','--password','database')
 
 #CREATE A CURSOR OBJECT
 mycursor=mydb.cursor()
@@ -88,7 +83,7 @@ X_train, X_test= np.split(X, [int(.90 *len(X))])
 
 ####
 app.layout = html.Div([
-    #html.Img(src='https://innodatatics.ai/assets/innologo.png'),
+    #html.Img(src='Your-compay-Logo'),
     html.H1('PHARMA SALES FORECAST',style={'textAlign': 'center',
                    
                    'fontSize': '55px',
